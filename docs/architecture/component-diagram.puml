@@ -9,7 +9,7 @@ Container_Boundary(webApp, "Spring Boot Web Application") {
     Component(staticController, "Static Controller", "Spring Controller", "Serves static web content")
     
     Component(activityUseCase, "Activity Use Case", "Application Service", "Orchestrates activity business logic")
-    Component(authUseCase, "Authentication Use Case", "Application Service", "Orchestrates authentication logic")
+    Component(authUseCase, "Authentication Use Case", "Application Service", "Handles teacher authentication and session management")
     Component(registrationUseCase, "Student Registration Use Case", "Application Service", "Handles student registrations")
     
     Component(activityEntity, "Activity Entity", "Domain Model", "Core activity business logic")
