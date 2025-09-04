@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import com.mergingtonhigh.schoolmanagement.domain.entities.Activity;
 import com.mergingtonhigh.schoolmanagement.domain.entities.Teacher;
 import com.mergingtonhigh.schoolmanagement.domain.valueobjects.ActivityType;
+import com.mergingtonhigh.schoolmanagement.domain.valueobjects.DifficultyLevel;
 import com.mergingtonhigh.schoolmanagement.domain.valueobjects.ScheduleDetails;
 
 import io.mongock.api.annotations.ChangeUnit;
@@ -70,7 +71,7 @@ public class V001_InitialDatabaseSetup {
                 chessClub.setParticipants(List.of("michael@mergington.edu", "daniel@mergington.edu"));
                 mongoTemplate.save(chessClub);
 
-                // Aula de Programação
+                // Aula de Programação - Intermediário
                 Activity programmingClass = new Activity(
                                 "Aula de Programação",
                                 "Aprenda fundamentos de programação e desenvolva projetos de software",
@@ -78,7 +79,8 @@ public class V001_InitialDatabaseSetup {
                                 new ScheduleDetails(List.of("Tuesday", "Thursday"), LocalTime.of(7, 0),
                                                 LocalTime.of(8, 0)),
                                 20,
-                                ActivityType.TECHNOLOGY);
+                                ActivityType.TECHNOLOGY,
+                                DifficultyLevel.INTERMEDIATE);
                 programmingClass.setParticipants(List.of("emma@mergington.edu", "sophia@mergington.edu"));
                 mongoTemplate.save(programmingClass);
 
@@ -118,14 +120,15 @@ public class V001_InitialDatabaseSetup {
                 basketballTeam.setParticipants(List.of("ava@mergington.edu", "mia@mergington.edu"));
                 mongoTemplate.save(basketballTeam);
 
-                // Clube de Arte
+                // Clube de Arte - Iniciante
                 Activity artClub = new Activity(
                                 "Clube de Arte",
                                 "Explore diversas técnicas artísticas e crie obras-primas",
                                 "Quintas-feiras, 15:15 - 17:00",
                                 new ScheduleDetails(List.of("Thursday"), LocalTime.of(15, 15), LocalTime.of(17, 0)),
                                 15,
-                                ActivityType.ARTS);
+                                ActivityType.ARTS,
+                                DifficultyLevel.BEGINNER);
                 artClub.setParticipants(List.of("amelia@mergington.edu", "harper@mergington.edu"));
                 mongoTemplate.save(artClub);
 
@@ -163,25 +166,27 @@ public class V001_InitialDatabaseSetup {
                 debateTeam.setParticipants(List.of("charlotte@mergington.edu", "amelia@mergington.edu"));
                 mongoTemplate.save(debateTeam);
 
-                // Oficina de Robótica
+                // Oficina de Robótica - Avançado
                 Activity roboticsWorkshop = new Activity(
                                 "Oficina de Robótica",
                                 "Construa e programe robôs em nossa oficina de última geração",
                                 "Sábados, 10:00 - 14:00",
                                 new ScheduleDetails(List.of("Saturday"), LocalTime.of(10, 0), LocalTime.of(14, 0)),
                                 15,
-                                ActivityType.TECHNOLOGY);
+                                ActivityType.TECHNOLOGY,
+                                DifficultyLevel.ADVANCED);
                 roboticsWorkshop.setParticipants(List.of("ethan@mergington.edu", "oliver@mergington.edu"));
                 mongoTemplate.save(roboticsWorkshop);
 
-                // Olimpíada de Ciências
+                // Olimpíada de Ciências - Avançado
                 Activity scienceOlympiad = new Activity(
                                 "Olimpíada de Ciências",
                                 "Preparação para competições científicas regionais e estaduais aos fins de semana",
                                 "Sábados, 13:00 - 16:00",
                                 new ScheduleDetails(List.of("Saturday"), LocalTime.of(13, 0), LocalTime.of(16, 0)),
                                 18,
-                                ActivityType.ACADEMIC);
+                                ActivityType.ACADEMIC,
+                                DifficultyLevel.ADVANCED);
                 scienceOlympiad.setParticipants(List.of("isabella@mergington.edu", "lucas@mergington.edu"));
                 mongoTemplate.save(scienceOlympiad);
 
